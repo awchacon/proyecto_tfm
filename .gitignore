@@ -1,0 +1,6 @@
+.venv
+requirements.txt
+__pycache__/
+data/coche_sale_buy/
+venv/
+model/
