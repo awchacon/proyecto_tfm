@@ -78,10 +78,10 @@ def Coches():
 
         if filtro_accion == 'Comprar':
             # Importo los datos de alquiler
-            df = pd.read_csv('C:/Universidad/Trabajo_final/data/bd_final.csv', sep=',', header=0)
+            df = pd.read_csv('data/bd_final.csv', sep=',', header=0)
         elif filtro_accion == 'Vender':
             # Importo los datos de compras
-            df = pd.read_csv('C:/Universidad/Trabajo_final/data/bd_final.csv', sep=',', header=0)
+            df = pd.read_csv('data/bd_final.csv', sep=',', header=0)
 
         # Convertir posibles valores nulos en la columna 'Carrocería' a 'Sin especificar'
         df['Carrocería'] = df['Carrocería'].fillna('Sin especificar')
@@ -196,9 +196,9 @@ def Inspeccion():
     filtro_accion = st.sidebar.selectbox('Elegir Acción:', Accion, index=0)
 
     if filtro_accion == 'Comprar':
-        df = pd.read_csv('C:/Universidad/Trabajo_final/data/bd_final.csv', sep=',', header=0)
+        df = pd.read_csv('data/bd_final.csv', sep=',', header=0)
     elif filtro_accion == 'Vender':
-        df = pd.read_csv('C:/Universidad/Trabajo_final/data/bd_final.csv', sep=',', header=0)
+        df = pd.read_csv('data/bd_final.csv', sep=',', header=0)
 
     # Defino la función que muestra las imágenes.
     def main():
@@ -284,7 +284,7 @@ def Inspeccion():
 # Función para cargar el modelo de TensorFlow (esto puede tardar unos segundos)
 @st.cache_resource
 def load_model():
-    model = tf.keras.models.load_model('C:/Universidad/Trabajo_final/model/modelo_tfm_best.keras')
+    model = tf.keras.models.load_model('model/modelo_tfm_best.keras')
     return model
 
 # Función para preprocesar la imagen
@@ -308,13 +308,13 @@ model = load_model()
 # Función para cargar el logo de la marca
 def cargar_logo(marca):
     logos = {
-        'CITROEN': 'C:/Universidad/Trabajo_final/static/logo/citroen.png',
-        'PEUGEOT': 'C:/Universidad/Trabajo_final/static/logo/peugeot.png',
-        'AUDI': 'C:/Universidad/Trabajo_final/static/logo/audi.png',
-        'TOYOTA': 'C:/Universidad/Trabajo_final/static/logo/toyota.png',
-        'BMW': 'C:/Universidad/Trabajo_final/static/logo/bmw.png',
-        'SEAT': 'C:/Universidad/Trabajo_final/static/logo/seat.png',
-        'HYUNDAI': 'C:/Universidad/Trabajo_final/static/logo/hyundai.png'
+        'CITROEN': 'static/logo/citroen.png',
+        'PEUGEOT': 'static/logo/peugeot.png',
+        'AUDI': 'static/logo/audi.png',
+        'TOYOTA': 'static/logo/toyota.png',
+        'BMW': 'static/logo/bmw.png',
+        'SEAT': 'static/logo/seat.png',
+        'HYUNDAI': 'static/logo/hyundai.png'
     }
     return logos.get(marca.upper(), 'path/to/default_logo.png')
 
@@ -388,10 +388,10 @@ if selected == "Imagen":
 
 elif selected == "Predecir Precio":
     # Cargar el modelo RandomForestRegressor y el encoder
-    with open("C:/Universidad/Trabajo_final/data/coche_sale_buy/mejor_modelo_rf.pkl", "rb") as file:
+    with open("data/coche_sale_buy/mejor_modelo_rf.pkl", "rb") as file:
         mejor_rf = pickle.load(file)
 
-    with open("C:/Universidad/Trabajo_final/data/coche_sale_buy/ordinal_encoder.pkl", "rb") as file:
+    with open("data/coche_sale_buy/ordinal_encoder.pkl", "rb") as file:
         encoder = pickle.load(file)
 
     # Columnas categóricas y numéricas
@@ -418,13 +418,13 @@ elif selected == "Predecir Precio":
     # Función para cargar la imagen del logo
     def cargar_logo(marca):
         logos = {
-            'CITROEN': 'C:/Universidad/Trabajo_final/static/logo/citroen.png',
-            'PEUGEOT': 'C:/Universidad/Trabajo_final/static/logo/peugeot.png',
-            'AUDI': 'C:/Universidad/Trabajo_final/static/logo/audi.png',
-            'TOYOTA': 'C:/Universidad/Trabajo_final/static/logo/toyota.png',
-            'BMW': 'C:/Universidad/Trabajo_final/static/logo/bmw.png',
-            'SEAT': 'C:/Universidad/Trabajo_final/static/logo/seat.png',
-            'HYUNDAI': 'C:/Universidad/Trabajo_final/static/logo/hyundai.png'
+            'CITROEN': 'static/logo/citroen.png',
+            'PEUGEOT': 'static/logo/peugeot.png',
+            'AUDI': 'static/logo/audi.png',
+            'TOYOTA': 'static/logo/toyota.png',
+            'BMW': 'static/logo/bmw.png',
+            'SEAT': 'static/logo/seat.png',
+            'HYUNDAI': 'static/logo/hyundai.png'
         }
         return logos.get(marca, 'path/to/default_logo.png')
 
