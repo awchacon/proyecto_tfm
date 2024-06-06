@@ -28,7 +28,6 @@ from PIL import Image
 import tensorflow as tf
 
 #configuramos el title de nuestra pagina -- streamlit run .\app.py
-#test
 
 st.set_page_config(page_title="DeepCarVision", page_icon="static/images/logo.png", layout="wide")
 
