@@ -118,7 +118,8 @@ pyproj==3.6.1
 python-dateutil==2.8.2
 python-json-logger==2.0.7
 pytz==2024.1
-pywinpty==2.0.12
+# pywin32==306  # Eliminar esta línea
+# pywinpty==2.0.12  # Eliminar esta línea
 PyYAML==6.0.1
 pyzmq==25.1.2
 referencing==0.33.0
