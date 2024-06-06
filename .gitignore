@@ -1,5 +1,6 @@
 .venv
 __pycache__/
 data/coche_sale_buy/
+data/coche_ml
 venv/
 model/
