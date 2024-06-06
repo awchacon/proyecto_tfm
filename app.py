@@ -8,20 +8,20 @@ from streamlit_option_menu import option_menu
 import plotly
 import plotly.express as px
 
-import webbrowser
+#import webbrowser
 import streamlit as st
 #from UI import *
-import os
+#import os
 
 from streamlit_keplergl import keplergl_static
 from keplergl import KeplerGl
 
-import geopandas as gpd
-import json
+#import geopandas as gpd
+#import json
 import streamlit.components.v1 as components
 import base64
 
-import replicate
+#import replicate
 
 import streamlit as st
 from PIL import Image
