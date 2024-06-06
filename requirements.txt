@@ -12,3 +12,4 @@ tensorflow==2.16.1
 tensorflow-estimator==2.13.0
 tensorflow-intel
 tensorflow-io-gcs-filesystem==0.31.0
+pickle
